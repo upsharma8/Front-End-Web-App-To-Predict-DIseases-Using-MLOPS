@@ -3,45 +3,100 @@
 
 
 
-<!doctype html>
-    <title>Upload new File</title>
-    <style type="text/css">
-		
-      body{
-        background-image:url('https://mypredictionmodels.s3.ap-south-1.amazonaws.com/download.jpg') ;
-        background-size: cover;
-        background-attachment: fixed;
-        
-      
-      }
-      .covid {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
 }
-      </style>
 
-      <body>
-       
 
-    <div class="covid">
-    <h1 style="font-size:400%"><centre>COVID-19 Disease Prediction</centre> </h1>   
-    <br>
-    </div>
-    
-    <h1>Upload new File</h1>
- 
-    <br>
-    <br>
-    <form method=post enctype=multipart/form-data>
-      <input type="file" name="image">
-      <input type=submit value=Predict>
-      <br>
-      <h3>Prediction: {{prediction}}</h3>
-    </form>
 
-    </body>
-    </html>
+
+.lk{
+  background-color: #f2f2f2;
+  padding: 250px;
+  background-image: url("https://mypredictionmodels.s3.ap-south-1.amazonaws.com/virus-shutterstock_1625951251-hero-1024x626.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #161616
+}
+.heading{
+  font-size: 50px;
+  padding: 120px;
+  color: #fff9ca
+}
+
+.heading1{
+  font-size: 30px;
+  padding: 50px;
+  color: #FFFBDF;
+}
+.heading2{
+  font-size: 50px;
+  color: #FFFBDF;
+}
+.bg-image {
+  /* The image used */
+
+
+  /* Add the blur effect */
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-control{
+    background-color: #FFC107;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 10%;
+  
+}
+
+
+
+
+
+
+</style>
+
+    <h1 class=heading><center>Covid-19 Detector</center>
+</style>
+
+     <h3 class=heading1><center>Upload Your Chest X-Ray Image</center></h3>
+<body class=lk
+
+  <div>
+    <form  method="POST" enctype="multipart/form-data">
+       <!-- <label for="formFileMultiple" class="form-label"  type="file"></label>-->
+        <center><input class=form-control  type="file" name='img' /></center>
+        <center><input type="submit" value="Predict"></center>
+        <center style="color: white;"><h1>Prediction: {{prediction}}</h1>
+        </form></center>
+
+    <p class=heading2>
+        <center style="color: white; left:0"><strong>Note:</strong> Enter .jpg format only*</center>
+    </p>
+
+
+
+   
+</body>
+</html> 
 
 {% endblock content %}

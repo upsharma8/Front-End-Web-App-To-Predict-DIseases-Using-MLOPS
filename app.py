@@ -77,7 +77,7 @@ def diabetespredict():
 
 
 @app.route("/heart")
-def diabetes():
+def heart():
     return render_template("heart-disease.html")
 
 @app.route("/heartoutput",methods=["GET"])

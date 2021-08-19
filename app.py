@@ -98,7 +98,7 @@ def heartpredict():
     a12=float(request.values.get("x12"))
     a13=float(request.values.get("x13"))
     
-    m=load_model("heart_predict1.h5")
+    m=load_model("heart_pred1.h5")
 
     output=m.predict([[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13]])
     if output < 0.5:

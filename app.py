@@ -56,7 +56,7 @@ def diabetes():
 
 
 @app.route("/diabetesoutput",methods=["GET"])
-def predict():
+def diabetespredict():
     
     a1=(float)(request.values.get("x1"))
     a2=float(request.values.get("x2"))
@@ -75,8 +75,13 @@ def predict():
     else:
         return("Diabetes is predicted for you")
 
+
+@app.route("/heart")
+def diabetes():
+    return render_template("heart-disease.html")
+
 @app.route("/heartoutput",methods=["GET"])
-def predict():
+def heartpredict():
     
     a1=(float)(request.values.get("x1"))
     a2=float(request.values.get("x2"))

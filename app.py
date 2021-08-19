@@ -75,6 +75,32 @@ def predict():
     else:
         return("Diabetes is predicted for you")
 
+@app.route("/diabetesoutput",methods=["GET"])
+def predict():
+    
+    a1=(float)(request.values.get("x1"))
+    a2=float(request.values.get("x2"))
+    a3=float(request.values.get("x3"))
+    a4=float(request.values.get("x4"))
+    a5=float(request.values.get("x5"))
+    a6=float(request.values.get("x6"))
+    a7=float(request.values.get("x7"))
+
+    a8=float(request.values.get("x8"))
+    a9=float(request.values.get("x9"))
+    a10=float(request.values.get("x10"))
+    a11=float(request.values.get("x11"))
+    a12=float(request.values.get("x12"))
+    a13=float(request.values.get("x13"))
+    
+    m=load_model("heart_predict(88%).pk1")
+
+    output=m.predict([[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13]])
+    if output < 0.5:
+        return("Heart Disease is not predicted for you")
+    else:
+        return("Heart Disease is predicted for you")
+
 
 
 app.run(host="0.0.0.0",debug=True,port=5000)

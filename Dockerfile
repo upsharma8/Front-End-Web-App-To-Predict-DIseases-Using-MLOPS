@@ -17,6 +17,6 @@ RUN mkdir /ws/Images
 COPY app.py /ws/
 EXPOSE 5000
 RUN export FLASK_APP=/ws/app.py
-ENTRYPOINT flask run --host=0.0.0.0 --port=5000
+
 
 
